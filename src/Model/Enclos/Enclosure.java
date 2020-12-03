@@ -129,4 +129,13 @@ public abstract class Enclosure {
         }
     }
 
+    public void feedHungryAnimals()
+    {
+        ArrayList<Animal> animalsToFeed = getHungryAnimals();
+
+        for (Animal animal : animalsToFeed) {
+            animal.setHunger(false);
+        }
+    }
+
 }
