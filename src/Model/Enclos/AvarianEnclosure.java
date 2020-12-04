@@ -41,12 +41,14 @@ public class AvarianEnclosure extends Enclosure {
     }
 
     @Override
-    public void cleanEnclosure() {
+    public boolean cleanEnclosure() {
         if(this.status == Status.BAD)
         {
             System.out.println("you can clean the enclosure");
             this.status = Status.GOOD;
+            return true;
         }
+        return false;
     }
 
     @Override

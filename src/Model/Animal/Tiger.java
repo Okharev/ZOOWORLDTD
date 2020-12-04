@@ -1,17 +1,20 @@
 package Model.Animal;
 
+
+import Model.Enclos.DefaultEnclosure;
+import Model.Enclos.Enclosure;
+
 import java.util.Date;
 
 public class Tiger extends Mammal {
     public boolean isVagabonding;
     public String sound;
 
-
-    public Tiger(int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isVagabonding) {
-        super("tiger", weight, height, dateOfBirth, hunger, sleeping, gender, health);
-        this.isVagabonding = isVagabonding;
-        this.sound = "Grrrrraou";
+    public Tiger(String name, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health,  boolean isVagabonding) {
+        super(name, "Tiger", weight, height, dateOfBirth, hunger, sleeping, gender, health);
+        this.sound = "Rawr";
     }
+
 
     @Override
     public String makeSound(String sound) {

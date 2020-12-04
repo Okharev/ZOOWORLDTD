@@ -1,5 +1,7 @@
 package Model.Animal;
 
+import Model.Enclos.Enclosure;
+
 import java.util.Date;
 
 public class Wolf extends Mammal {
@@ -7,11 +9,12 @@ public class Wolf extends Mammal {
     public boolean isVagabonding;
     public String sound;
 
-    public Wolf(int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isVagabonding) {
-        super("wolf", weight, height, dateOfBirth, hunger, sleeping, gender, health);
+    public Wolf(String name, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isVagabonding) {
+        super(name, "Wolf", weight, height, dateOfBirth, hunger, sleeping, gender, health);
         this.isVagabonding = isVagabonding;
-        this.sound = "Awoo";
+        this.sound = "awwwoooo";
     }
+
 
     @Override
     public String makeSound(String sound) {

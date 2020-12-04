@@ -1,30 +1,26 @@
 package View.Animal;
 
-import Model.Animal.Animal;
 
-import javax.swing.*;
-import java.awt.*;
+import Model.Animal.Animal;
 
 public class AnimalView {
 
-    JFrame frame;
-    JLabel label;
-
-    public void init()
-    {
-        frame = new JFrame("ANIMAL VIEW");
-        label = new JLabel();
-
-        frame.setLayout(new FlowLayout());
-        frame.getContentPane().add(label);
-
-        frame.setVisible(true);
-        frame.pack();
+    public AnimalView() {
     }
 
-    public void showAnimal(String data)
+    public void menu(Animal animal)
     {
-        label.setText(data);
+        System.out.println("Animal view ");
+        System.out.println("-------------------------\n");
+        System.out.println("Animal name: ");
+        System.out.println("Animal specie: " + animal.getSpecie());
+        System.out.println("Animal weight: "  + animal.getWeight());
+        System.out.println("Animal height: ");
+        System.out.println("Animal health: ");
+        System.out.println("Animal hunger: ");
+        System.out.println("Animal sleeping: ");
+        System.out.println("Animal gender: ");
+        System.out.println("Q - Quit");
     }
 
 }

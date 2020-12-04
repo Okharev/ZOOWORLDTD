@@ -66,8 +66,8 @@ public abstract class Enclosure {
         return nbCurrAnimals;
     }
 
-    public void setNbCurrAnimals(int nbCurrAnimals) {
-        this.nbCurrAnimals = nbCurrAnimals;
+    public void setNbCurrAnimals() {
+        this.nbCurrAnimals = animals.size();
     }
 
     public ArrayList<Animal> getAnimals() {
@@ -91,13 +91,20 @@ public abstract class Enclosure {
         if(this.animals.size() < this.nbMaxAnimals)
         {
             this.animals.add(animal);
-            setNbCurrAnimals(getNbCurrAnimals() + 1);
+            setNbCurrAnimals();
         }
     }
 
-    public void removeAnimal(int index)
+    public void removeAnimals(ArrayList<Animal> animals)
     {
-        this.animals.remove(index);
+        this.animals.removeAll(animals);
+        setNbCurrAnimals();
+    }
+
+    public void removeAnimal(Animal animal)
+    {
+        this.animals.remove(animal);
+        setNbCurrAnimals();
     }
 
     public ArrayList<Animal> getHungryAnimals()
@@ -120,13 +127,15 @@ public abstract class Enclosure {
         }
     }
 
-    public void cleanEnclosure()
+    public boolean cleanEnclosure()
     {
-        if(this.status == Status.BAD)
+        if(this.status == Status.BAD && animals.size() == 0)
         {
             System.out.println("you can clean the enclosure");
             this.status = Status.GOOD;
+            return true;
         }
+        return false;
     }
 
     public void feedHungryAnimals()
@@ -134,8 +143,14 @@ public abstract class Enclosure {
         ArrayList<Animal> animalsToFeed = getHungryAnimals();
 
         for (Animal animal : animalsToFeed) {
+            System.out.println("animal feeded");
             animal.setHunger(false);
         }
+    }
+
+    public int getRemainingSpace()
+    {
+        return nbMaxAnimals - nbCurrAnimals;
     }
 
 }

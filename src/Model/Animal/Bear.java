@@ -1,16 +1,19 @@
 package Model.Animal;
 
+import Model.Enclos.Enclosure;
+
 import java.util.Date;
 
 public class Bear extends Mammal {
     public boolean isVagabonding;
     public String sound;
 
-    public Bear(int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isVagabonding, String sound) {
-        super("Bear", weight, height, dateOfBirth, hunger, sleeping, gender, health);
+    public Bear(String name, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isVagabonding) {
+        super(name,"Bear", weight, height, dateOfBirth, hunger, sleeping, gender, health);
         this.isVagabonding = isVagabonding;
-        this.sound = "Bear sound";
+        this.sound = "groua";
     }
+
 
     @Override
     public String makeSound(String sound) {

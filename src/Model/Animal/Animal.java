@@ -1,9 +1,12 @@
 package Model.Animal;
 
+import Model.Enclos.Enclosure;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Animal {
+    private String name;
     private String specie;
     private int weight;
     private int height;
@@ -11,7 +14,8 @@ public abstract class Animal {
     private boolean hunger;
     private boolean sleeping;
 
-    public Animal(String specie, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health) {
+    public Animal(String name, String specie, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health) {
+        this.name = name;
         this.specie = specie;
         this.weight = weight;
         this.height = height;
@@ -21,6 +25,7 @@ public abstract class Animal {
         this.gender = gender;
         this.health = health;
     }
+
 
     @Override
     public String toString() {
