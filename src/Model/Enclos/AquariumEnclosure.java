@@ -1,6 +1,7 @@
 package Model.Enclos;
 
 import Model.Animal.Animal;
+import Model.Animal.Aquatic;
 
 import java.util.ArrayList;
 
@@ -20,15 +21,9 @@ public class AquariumEnclosure extends Enclosure{
 
         if( depth >= 20 || salt >= 20) {
             super.setStatus(DefaultEnclosure.Status.BAD);
-            /*
-            System.out.println("les taux de sel  " + currentSaltiness + " besoin de -> " + prefferedSaltiness);
-            System.out.println("profondeur :  " + currentDepth + " besoin de -> " + prefferedDepth);*/
         }
         else if( depth >= 10 || salt >= 10) {
             super.setStatus(DefaultEnclosure.Status.CORRECT);
-            /*
-            System.out.println("les taux de sel  " + currentSaltiness + " besoin de -> " + prefferedSaltiness);
-            System.out.println("profondeur :  " + currentDepth + " besoin de -> " + prefferedDepth);*/
         }
         else
             super.setStatus(DefaultEnclosure.Status.GOOD);
@@ -81,5 +76,18 @@ public class AquariumEnclosure extends Enclosure{
                 ", prefferedSaltiness=" + prefferedSaltiness +
                 ", currentSaltiness=" + currentSaltiness +
                 '}';
+    }
+
+    public  void addAnimal(Animal animal)
+    {
+        if(this.getAnimals().size() < this.getNbMaxAnimals() &&  animal instanceof Aquatic)
+        {
+            this.getAnimals().add(animal);
+            setNbCurrAnimals();
+        }
+        else
+        {
+            System.out.println(animal.getSpecie() + " This animal does not belong here");
+        }
     }
 }

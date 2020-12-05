@@ -84,14 +84,7 @@ public abstract class Enclosure {
         this.status = status;
     }
 
-    public void addAnimal(Animal animal)
-    {
-        if(this.animals.size() < this.nbMaxAnimals)
-        {
-            this.animals.add(animal);
-            setNbCurrAnimals();
-        }
-    }
+    public abstract void addAnimal(Animal animal);
 
     public void removeAnimals(ArrayList<Animal> animals)
     {

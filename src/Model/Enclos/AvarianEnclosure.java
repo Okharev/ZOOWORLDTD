@@ -1,6 +1,7 @@
 package Model.Enclos;
 
 import Model.Animal.Animal;
+import Model.Animal.Avian;
 
 import java.util.ArrayList;
 
@@ -58,5 +59,18 @@ public class AvarianEnclosure extends Enclosure {
                 "preferredHeight=" + preferredHeight +
                 ", currentHeight=" + currentHeight +
                 '}';
+    }
+
+    public  void addAnimal(Animal animal)
+    {
+        if(this.getAnimals().size() < this.getNbMaxAnimals() &&  animal instanceof Avian)
+        {
+            this.getAnimals().add(animal);
+            setNbCurrAnimals();
+        }
+        else
+        {
+            System.out.println(animal.getSpecie() + " This animal does not belong here");
+        }
     }
 }

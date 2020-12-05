@@ -41,28 +41,30 @@ public abstract class Animal {
         System.out.println("Animal name : " + this.weight);
         System.out.println("Animal height : " + this.height);
 
-        String hunger = (this.hunger) ? "Hungry": "Not Hungry";
+        String hunger = (this.hunger) ? "Hungry" : "Not Hungry";
         System.out.println("Animal hunger : " + hunger);
 
-        String sleep = (this.sleeping) ? "Sleeping": "Not Sleeping";
+        String sleep = (this.sleeping) ? "Sleeping" : "Not Sleeping";
         System.out.println("is the animal sleeping : " + sleep);
         System.out.println("Animal gender : " + this.gender);
         System.out.println("Animal health : " + this.health);
     }
 
-    public enum Gender
-    {
+    public enum Gender {
         FEMALE,
         MALE,
         OTHER
-    } Gender gender;
+    }
 
-    public enum Health
-    {
+    Gender gender;
+
+    public enum Health {
         HEALTHY,
         SICK,
         DEAD
-    } Health health;
+    }
+
+    Health health;
 
     public String getSpecie() {
         return specie;
@@ -132,8 +134,7 @@ public abstract class Animal {
     public String eat(boolean hunger) {
         hunger = this.hunger;
 
-        if(!hunger)
-        {
+        if (!hunger) {
             return "Not hungry";
         } else {
             return "I am hungry";
@@ -142,18 +143,15 @@ public abstract class Animal {
 
     // ! TODO get the sound of the given animal
     // ! Parler avec le prof sur l implementation de la fonction
-    public String makeSound(String sound)
-    {
+    public String makeSound(String sound) {
         return sound;
     }
 
-    public void heal(Health health)
-    {
+    public void heal(Health health) {
         health = this.health;
     }
 
-    public void sleep(boolean sleeping)
-    {
+    public void sleep(boolean sleeping) {
     }
 
 
