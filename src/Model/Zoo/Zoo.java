@@ -81,22 +81,19 @@ public class Zoo {
         return info;
     }
 
-    public String animalsInfoZoo() {
-
-        String animalsInfoZoo = "";
+    public void animalsInfoZoo() {
 
         for (Enclosure enclosure :
                 this.enclosures) {
+            System.out.println("\n");
 
-            animalsInfoZoo += enclosure.getName();
+            System.out.println(enclosure.getName());
 
             for (Animal animal : enclosure.getAnimals())
             {
-                animalsInfoZoo += animal.getSpecie();
+                System.out.println(animal.getSpecie() +" : " + animal.getName() + " Status :" + animal.getHealth());
             }
 
         }
-
-        return animalsInfoZoo;
     }
 }

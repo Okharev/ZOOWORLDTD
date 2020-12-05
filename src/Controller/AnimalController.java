@@ -17,7 +17,7 @@ public class AnimalController {
 
     public void showAnimal()
     {
-        view.menu(model);
+        //view.menu(model);
     }
 
 }

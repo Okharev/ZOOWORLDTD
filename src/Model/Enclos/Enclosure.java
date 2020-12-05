@@ -11,15 +11,13 @@ public abstract class Enclosure {
     private int nbCurrAnimals;
     private ArrayList<Animal> animals;
 
-    public String toString() {
-        return "Enclosure{" +
-                "name='" + name +  '\'' +
-                ", surfaceArea=" + surfaceArea +
-                ", nbMaxAnimals=" + nbMaxAnimals +
-                ", nbCurrAnimals=" + nbCurrAnimals +
-                ", animals=" + animals +
-                ", status=" + status +
-                '}';
+    public void examineEnclosure() {
+        System.out.println("==============CHARACTERISTICS=============");
+        System.out.println("Enclosure name : " + this.name);
+        System.out.println("Enclosure Status : " + this.status);
+        System.out.println("Enclosure area : " + this.surfaceArea);
+        System.out.println("Enclosure max capacity of animals : " + this.nbMaxAnimals);
+        System.out.println("Enclosure number of animals : " + this.nbCurrAnimals);
     }
 
     public enum Status

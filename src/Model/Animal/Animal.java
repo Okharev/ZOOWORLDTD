@@ -6,6 +6,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Animal {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private String name;
     private String specie;
     private int weight;
@@ -26,19 +34,16 @@ public abstract class Animal {
         this.health = health;
     }
 
-
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "specie='" + specie + '\'' +
-                ", weight=" + weight +
-                ", height=" + height +
-                ", dateOfBirth=" + dateOfBirth +
-                ", hunger=" + hunger +
-                ", sleeping=" + sleeping +
-                ", gender=" + gender +
-                ", health=" + health +
-                '}';
+    public void examineAnimal() {
+        System.out.println("==========================================");
+        System.out.println("Animal name : " + this.name);
+        System.out.println("Animal specie : " + this.specie);
+        System.out.println("Animal name : " + this.weight);
+        System.out.println("Animal height : " + this.height);
+        System.out.println("Animal hunger : " + this.hunger);
+        System.out.println("is the animal sleeping : " + this.sleeping);
+        System.out.println("Animal gender : " + this.gender);
+        System.out.println("Animal health : " + this.health);
     }
 
     public enum Gender

@@ -38,11 +38,9 @@ public class Tiger extends Mammal {
     }
 
     @Override
-    public String toString() {
-        return "Tiger{" +
-                "isVagabonding=" + isVagabonding +
-                ", sound='" + sound + '\'' +
-                super.toString() +
-                '}';
+    public void examineAnimal() {
+        super.examineAnimal();
+        System.out.println("Animal sound : " + this.sound);
+        System.out.println("Animal isVagabonding : " + this.isVagabonding);
     }
 }

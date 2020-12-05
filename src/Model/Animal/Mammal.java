@@ -25,10 +25,8 @@ public abstract class Mammal extends Animal {
     }
 
     @Override
-    public String toString() {
-        return "Mammal{" +
-                "canHaveOffspring=" + canHaveOffspring + '\n' +
-                super.toString() +
-                '}';
+    public void examineAnimal() {
+        super.examineAnimal();
+        System.out.println("Animal can have offspring : " + this.isCanHaveOffspring());
     }
 }
