@@ -68,14 +68,14 @@ public class AquariumEnclosure extends Enclosure{
     }
 
     @Override
-    public String toString() {
-        return "AquariumEnclosure{" +
-                super.toString() +
-                "prefferedDepth=" + prefferedDepth +
-                ", currentDepth=" + currentDepth +
-                ", prefferedSaltiness=" + prefferedSaltiness +
-                ", currentSaltiness=" + currentSaltiness +
-                '}';
+    public void examineEnclosure() {
+        super.examineEnclosure();
+        System.out.println("==============CHARACTERISTICS Aquarium=============");
+        System.out.println("Enclosure prefferedDepth : " + this.prefferedDepth);
+        System.out.println("Enclosure currentDepth : " + this.currentDepth);
+        System.out.println("Enclosure prefferedSaltiness : " + this.prefferedSaltiness);
+        System.out.println("Enclosure currentSaltiness: " + this.currentSaltiness);
+
     }
 
     public  void addAnimal(Animal animal)

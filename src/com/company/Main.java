@@ -1,5 +1,8 @@
 package com.company;
 
+import Model.Animal.Whale;
+import Model.Animal.Wolf;
+import Model.Enclos.AquariumEnclosure;
 import View.DashboardView;
 import Controller.AnimalController;
 import Model.Animal.Animal;
@@ -19,7 +22,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        DefaultEnclosure mammalEnclosure = new DefaultEnclosure("Mammal enclo need cleaning 1", 150, 20, new ArrayList<>(), Enclosure.Status.BAD);
+       /* DefaultEnclosure mammalEnclosure = new DefaultEnclosure("Mammal enclo need cleaning 1", 150, 20, new ArrayList<>(), Enclosure.Status.BAD);
 
         DefaultEnclosure mammalTempEnclosure = new DefaultEnclosure("Mammal enclo 1 tempo", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD);
 
@@ -63,7 +66,20 @@ public class Main {
 
         DashboardView dash = new DashboardView(myZoo);
 
-        dash.menu();
+        dash.menu();*/
+
+        Whale myWhale = new Whale("Wammu",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+
+        Tiger Tigrou = new Tiger("Tigrou",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Wolf Teen = new Wolf("Teen",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+
+
+        AquariumEnclosure AquariumEnclosure = new AquariumEnclosure("Aquarium", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD, 50, 40, 50,  40);
+        AquariumEnclosure.addAnimal(myWhale);
+        AquariumEnclosure.addAnimal(Tigrou);
+        AquariumEnclosure.addAnimal(Teen);
+
+        AquariumEnclosure.examineEnclosure();
 
     }
 }
