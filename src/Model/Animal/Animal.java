@@ -40,8 +40,12 @@ public abstract class Animal {
         System.out.println("Animal specie : " + this.specie);
         System.out.println("Animal name : " + this.weight);
         System.out.println("Animal height : " + this.height);
-        System.out.println("Animal hunger : " + this.hunger);
-        System.out.println("is the animal sleeping : " + this.sleeping);
+
+        String hunger = (this.hunger) ? "Hungry": "Not Hungry";
+        System.out.println("Animal hunger : " + hunger);
+
+        String sleep = (this.sleeping) ? "Sleeping": "Not Sleeping";
+        System.out.println("is the animal sleeping : " + sleep);
         System.out.println("Animal gender : " + this.gender);
         System.out.println("Animal health : " + this.health);
     }

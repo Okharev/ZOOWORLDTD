@@ -27,6 +27,8 @@ public abstract class Mammal extends Animal {
     @Override
     public void examineAnimal() {
         super.examineAnimal();
-        System.out.println("Animal can have offspring : " + this.isCanHaveOffspring());
+
+        String canHaveOffspring = (this.canHaveOffspring) ? "Can give birth": "Can not give birth";
+        System.out.println("Animal offspring : " + canHaveOffspring);
     }
 }

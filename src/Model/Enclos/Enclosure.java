@@ -141,7 +141,7 @@ public abstract class Enclosure {
         ArrayList<Animal> animalsToFeed = getHungryAnimals();
 
         for (Animal animal : animalsToFeed) {
-            System.out.println("animal feeded");
+            System.out.println("animal : " + animal.getName() + " feeded");
             animal.setHunger(false);
         }
     }

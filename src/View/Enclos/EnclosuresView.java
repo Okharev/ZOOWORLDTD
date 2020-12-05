@@ -35,15 +35,30 @@ public class EnclosuresView {
 
         System.out.println("\n0 - Return");
 
-        selection = input.nextInt();
+        while (true)
+        {
+            try {
+                selection = input.nextInt();
 
-        if (selection == 0) {
-            DashboardView dashboardView = new DashboardView(this.zoo);
-            dashboardView.menu();
+                if (selection == 0) {
+                    DashboardView dashboardView = new DashboardView(this.zoo);
+                    dashboardView.menu();
+                    break;
+                } else if(selection <= enclosures.size())
+                {
+                    EnclosureView enclosureView = new EnclosureView(this.enclosures.get(selection - 1), enclosures, zoo);
+                    enclosureView.menu();
+                    break;
+                } else {
+                    menu();
+                    break;
+                }
+            } catch (Exception e)
+            {
+                menu();
+            }
         }
 
-        EnclosureView enclosureView = new EnclosureView(this.enclosures.get(selection - 1), enclosures, zoo);
-        enclosureView.menu();
 
     }
 

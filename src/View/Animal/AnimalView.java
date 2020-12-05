@@ -44,11 +44,23 @@ public class AnimalView {
 
         System.out.println("-------------------------\n");
         System.out.println("0 - Return");
-        selection = input.nextInt();
+        while (true) {
+            try {
+                selection = input.nextInt();
 
-        if(selection == 0) {
-            AnimalsView animalsView = new AnimalsView(animals, enclosure, enclosures, zoo);
-            animalsView.menu();
+                if (selection == 0) {
+                    AnimalsView animalsView = new AnimalsView(animals, enclosure, enclosures, zoo);
+                    animalsView.menu();
+                    break;
+
+                } else {
+                    menu();
+                    break;
+                }
+            } catch (Exception e) {
+                menu();
+            }
+
         }
     }
 }

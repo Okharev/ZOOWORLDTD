@@ -1,9 +1,8 @@
 package View;
 
-import Model.Animal.Animal;
 import Model.Enclos.Enclosure;
 import Model.Zoo.Zoo;
-import View.Enclos.EnclosuresView;
+
 
 import java.util.Scanner;
 
@@ -33,11 +32,23 @@ public class ZooStatusView {
 
         System.out.println("0 - Return \n");
 
-        selection = input.nextInt();
+        while (true)
+        {
+            try {
+                selection = input.nextInt();
 
-        if (selection == 0) {
-            DashboardView dashboardView = new DashboardView(this.zoo);
-            dashboardView.menu();
+                if (selection == 0) {
+                    DashboardView dashboardView = new DashboardView(this.zoo);
+                    dashboardView.menu();
+                    break;
+                } else {
+                    menu();
+                    break;
+                }
+            } catch (Exception e)
+            {
+                menu();
+            }
         }
     }
 }

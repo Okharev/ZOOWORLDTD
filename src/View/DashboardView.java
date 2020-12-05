@@ -27,22 +27,36 @@ public class DashboardView {
 
         System.out.println("0 - Quit \n");
 
-        selection = input.nextInt();
+        while (true)
+        {
+            try {
+                selection = input.nextInt();
 
-        if(selection == 1)
-        {
-            EnclosuresView enclosView = new EnclosuresView(zoo.getEnclosures(), zoo);
-            enclosView.menu();
-        }
-        if(selection == 2)
-        {
-            ZooStatusView ZooStatusView = new ZooStatusView(zoo);
-            ZooStatusView.menu();
-        }
-        if(selection == 3)
-        {
-            EnclosuresView enclosView = new EnclosuresView(zoo.getEnclosures(), zoo);
-            enclosView.menu();
+                if(selection == 1)
+                {
+                    EnclosuresView enclosView = new EnclosuresView(zoo.getEnclosures(), zoo);
+                    enclosView.menu();
+                    break;
+                }
+                if(selection == 2)
+                {
+                    ZooStatusView ZooStatusView = new ZooStatusView(zoo);
+                    ZooStatusView.menu();
+                    break;
+                }
+                if(selection == 3)
+                {
+                    EnclosuresView enclosView = new EnclosuresView(zoo.getEnclosures(), zoo);
+                    enclosView.menu();
+                    break;
+                } else {
+                    menu();
+                    break;
+                }
+            } catch (Exception e)
+            {
+                menu();
+            }
         }
     }
 

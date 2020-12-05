@@ -59,24 +59,27 @@ public class Employee {
 
     public void cleanEnclosure(Enclosure enclosure, Enclosure newEnclosure)
     {
-        ArrayList<Animal> enclosureAnimals = enclosure.getAnimals();
-
-        ArrayList<Animal> animalsToDelete = new ArrayList<>();
-        for (Animal animal: enclosureAnimals) {
-            animalsToDelete.add(animal);
-            newEnclosure.addAnimal(animal);
-        }
-
-        enclosure.removeAnimals(animalsToDelete);
-
-        if(enclosure.cleanEnclosure())
+        if(enclosure != newEnclosure)
         {
-            ArrayList<Animal> animalsToDeleteTemp = new ArrayList<>();
-            for (Animal animal: animalsToDelete) {
-                animalsToDeleteTemp.add(animal);
-                enclosure.addAnimal(animal);
+            ArrayList<Animal> enclosureAnimals = enclosure.getAnimals();
+
+            ArrayList<Animal> animalsToDelete = new ArrayList<>();
+            for (Animal animal: enclosureAnimals) {
+                animalsToDelete.add(animal);
+                newEnclosure.addAnimal(animal);
             }
-            newEnclosure.removeAnimals(animalsToDeleteTemp);
+
+            enclosure.removeAnimals(animalsToDelete);
+
+            if(enclosure.cleanEnclosure())
+            {
+                ArrayList<Animal> animalsToDeleteTemp = new ArrayList<>();
+                for (Animal animal: animalsToDelete) {
+                    animalsToDeleteTemp.add(animal);
+                    enclosure.addAnimal(animal);
+                }
+                newEnclosure.removeAnimals(animalsToDeleteTemp);
+            }
         }
     }
 
@@ -96,6 +99,7 @@ public class Employee {
 
     public void feedEnclosure(Enclosure enclosure)
     {
+        System.out.println("\n");
         enclosure.feedHungryAnimals();
     }
 

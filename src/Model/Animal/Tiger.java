@@ -41,6 +41,7 @@ public class Tiger extends Mammal {
     public void examineAnimal() {
         super.examineAnimal();
         System.out.println("Animal sound : " + this.sound);
-        System.out.println("Animal isVagabonding : " + this.isVagabonding);
+        String vagabonding = (this.isVagabonding) ? "Currently vagabonding" : "Not Vagabonding";
+        System.out.println("Animal vagabond : " + vagabonding);
     }
 }

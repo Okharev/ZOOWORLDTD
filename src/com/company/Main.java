@@ -26,15 +26,15 @@ public class Main {
         DefaultEnclosure mammalTempEnclosureTwo = new DefaultEnclosure("Mammal enclo 1 tempo", 150, 20, new ArrayList<>(), Enclosure.Status.BAD);
 
         Tiger myTiger1 = new Tiger("Wammu",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Tiger myTiger2 = new Tiger("ACDC",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Tiger myTiger2 = new Tiger("ACDC",15, 18, new Date(), true, true , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
         Tiger myTiger3 = new Tiger("CEASAR",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
 
         Tiger myTiger4 = new Tiger("Charly", 15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.SICK, true);
-        Tiger myTiger5 = new Tiger("Roger",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Tiger myTiger5 = new Tiger("Roger",15, 18, new Date(), true, true , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
         Tiger myTiger6 = new Tiger("Tango",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
 
         Tiger myTiger7 = new Tiger("Charly", 15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Tiger myTiger8 = new Tiger("Roger",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.SICK, true);
+        Tiger myTiger8 = new Tiger("Roger",15, 18, new Date(), true, true , Animal.Gender.MALE, Animal.Health.SICK, true);
         Tiger myTiger9 = new Tiger("Tango",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
 
         mammalEnclosure.addAnimal(myTiger1);
@@ -60,15 +60,6 @@ public class Main {
 
         System.out.println(myZoo.enclosureInfo(mammalEnclosure));
 
-
-        /*
-        Tiger myTiger1 = new Tiger("Wammu",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        AnimalView myView = new AnimalView();
-
-
-        AnimalController c =  new AnimalController(myTiger1, myView);
-
-        c.showAnimal();*/
 
         DashboardView dash = new DashboardView(myZoo);
 

@@ -29,8 +29,6 @@ public class AnimalsView {
         int selection;
         Scanner input = new Scanner(System.in);
 
-
-
         System.out.println("Choose from these choices");
         System.out.println("-------------------------\n");
 
@@ -38,22 +36,33 @@ public class AnimalsView {
         {
             int count = i - 1;
             animals.get(count).examineAnimal();
-
         }
 
         System.out.println("-------------------------\n");
 
         System.out.println("0 - Return");
 
+        while (true)
+        {
+            try {
+                selection = input.nextInt();
 
-        selection = input.nextInt();
-
-        if(selection == 0) {
-            EnclosureView enclosureView = new EnclosureView(enclosure, enclosures, zoo);
-            enclosureView.menu();
-        } else {
-            AnimalView animalView = new AnimalView(this.animals.get(selection - 1), animals, enclosure, enclosures, zoo);
-            animalView.menu();
+                if(selection == 0) {
+                    EnclosureView enclosureView = new EnclosureView(enclosure, enclosures, zoo);
+                    enclosureView.menu();
+                    break;
+                } else if(selection <= this.animals.size()) {
+                    AnimalView animalView = new AnimalView(this.animals.get(selection - 1), animals, enclosure, enclosures, zoo);
+                    animalView.menu();
+                    break;
+                } else {
+                    menu();
+                    break;
+                }
+            } catch (Exception e)
+            {
+                menu();
+            }
         }
 
     }
