@@ -59,8 +59,10 @@ public class Employee {
 
     public void cleanEnclosure(Enclosure enclosure, Enclosure newEnclosure)
     {
-        if(enclosure != newEnclosure)
+        if(enclosure != newEnclosure && enclosure.getClass().getName().equals(newEnclosure.getClass().getName()))
         {
+            System.out.println(enclosure.getClass().getName() + "   " + newEnclosure.getClass().getName());
+
             ArrayList<Animal> enclosureAnimals = enclosure.getAnimals();
 
             ArrayList<Animal> animalsToDelete = new ArrayList<>();
@@ -80,6 +82,8 @@ public class Employee {
                 }
                 newEnclosure.removeAnimals(animalsToDeleteTemp);
             }
+        } else {
+            System.out.println("error in moving the animal, he probably does not belong in this enclosure\n");
         }
     }
 
@@ -90,10 +94,12 @@ public class Employee {
 
     public void moveToNewEnclosure(Enclosure oldEnclosure, Animal animal ,Enclosure newEnclosure)
     {
-        if(newEnclosure.getRemainingSpace() > 0)
+        if(newEnclosure.getRemainingSpace() > 0 && oldEnclosure.getClass().getName().equals(newEnclosure.getClass().getName()))
         {
             oldEnclosure.removeAnimal(animal);
             newEnclosure.addAnimal(animal);
+        } else {
+            System.out.println("error in moving the animal, he probably does not belong in this enclosure\n");
         }
     }
 

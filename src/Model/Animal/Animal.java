@@ -1,8 +1,5 @@
 package Model.Animal;
 
-import Model.Enclos.Enclosure;
-
-import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Animal {
@@ -21,6 +18,7 @@ public abstract class Animal {
     private java.util.Date dateOfBirth;
     private boolean hunger;
     private boolean sleeping;
+
 
     public Animal(String name, String specie, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health) {
         this.name = name;
@@ -47,7 +45,12 @@ public abstract class Animal {
         String sleep = (this.sleeping) ? "Sleeping" : "Not Sleeping";
         System.out.println("is the animal sleeping : " + sleep);
         System.out.println("Animal gender : " + this.gender);
-        System.out.println("Animal health : " + this.health);
+        if(this.health == Health.SICK)
+            System.out.println("\u001B[33m" + "Animal health : " + this.health + "\u001B[0m");
+        else if (this.health == Health.DEAD)
+            System.out.println("\u001B[31m" + "Animal health : " + this.health + "\u001B[0m");
+        else
+            System.out.println("Animal health : " + this.health);
     }
 
     public enum Gender {
@@ -141,8 +144,6 @@ public abstract class Animal {
         }
     }
 
-    // ! TODO get the sound of the given animal
-    // ! Parler avec le prof sur l implementation de la fonction
     public String makeSound(String sound) {
         return sound;
     }
@@ -151,8 +152,6 @@ public abstract class Animal {
         health = this.health;
     }
 
-    public void sleep(boolean sleeping) {
-    }
 
 
 }

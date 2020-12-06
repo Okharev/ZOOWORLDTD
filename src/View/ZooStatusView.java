@@ -23,7 +23,12 @@ public class ZooStatusView {
 
         for(Enclosure enclosure : zoo.getEnclosures())
         {
-            System.out.println(enclosure.getName() + " " + enclosure.getStatus());
+            if(enclosure.getStatus() == Enclosure.Status.BAD)
+                System.out.println("\u001B[31m" + "Enclosure " + enclosure.getName() + " " + enclosure.getStatus() + "\u001B[0m");
+            else if (enclosure.getStatus() == Enclosure.Status.CORRECT)
+                System.out.println("\u001B[33m" + "Enclosure " + enclosure.getName() + " " + enclosure.getStatus() + "\u001B[0m");
+            else
+                System.out.println("Enclosure " + enclosure.getName() + " " + enclosure.getStatus());
         }
 
         System.out.println("=================Animals===================");
@@ -38,10 +43,12 @@ public class ZooStatusView {
                 selection = input.nextInt();
 
                 if (selection == 0) {
+                    zoo.randomize();
                     DashboardView dashboardView = new DashboardView(this.zoo);
                     dashboardView.menu();
                     break;
                 } else {
+                    zoo.randomize();
                     menu();
                     break;
                 }

@@ -49,11 +49,17 @@ public class AnimalView {
                 selection = input.nextInt();
 
                 if (selection == 0) {
+
+                    zoo.randomize();
+
                     AnimalsView animalsView = new AnimalsView(animals, enclosure, enclosures, zoo);
                     animalsView.menu();
                     break;
 
                 } else {
+
+                    zoo.randomize();
+
                     menu();
                     break;
                 }

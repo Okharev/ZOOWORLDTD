@@ -38,11 +38,10 @@ public class Wolf extends Mammal {
     }
 
     @Override
-    public String toString() {
-        return "Wolf{" +
-                "isVagabonding=" + isVagabonding +
-                ", sound='" + sound + '\'' +
-                super.toString() +
-                '}';
+    public void examineAnimal() {
+        super.examineAnimal();
+        System.out.println("Animal sound : " + this.sound);
+        String vagabonding = (this.isVagabonding) ? "Currently vagabonding" : "Not Vagabonding";
+        System.out.println("Animal vagabond : " + vagabonding);
     }
 }

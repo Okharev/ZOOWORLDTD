@@ -12,7 +12,7 @@ public class Auk extends Avian{
 
 
         public Auk(String name, int weight,  int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isSwimmming, boolean isWalking, boolean isFlying) {
-        super("auk", name, weight, height, dateOfBirth, hunger, sleeping, gender, health);
+        super("Auk", name, weight, height, dateOfBirth, hunger, sleeping, gender, health);
 
         this.isSwimmming = isSwimmming;
         this.isWalking = isWalking;
@@ -60,9 +60,12 @@ public class Auk extends Avian{
     public void examineAnimal() {
         super.examineAnimal();
         System.out.println("Animal sound : " + this.sound);
-        System.out.println("Animal isVagabonding : " + this.isSwimmming);
-        System.out.println("Animal isVagabonding : " + this.isWalking);
-        System.out.println("Animal isVagabonding : " + this.isFlying);
+        String swimmming = (this.isSwimmming) ? "Currently swimmming" : "Not swimmming";
+        System.out.println("Animal isSwimmming : " + swimmming);
+        String walking = (this.isWalking) ? "Currently walking" : "Not walking";
+        System.out.println("Animal isWalking : " + walking);
+        String flying = (this.isFlying) ? "Currently flying" : "Not flying";
+        System.out.println("Animal isFlying : " + flying);
     }
 
 }

@@ -35,4 +35,12 @@ public class Bear extends Mammal {
     public void setSound(String sound) {
         this.sound = sound;
     }
+
+    @Override
+    public void examineAnimal() {
+        super.examineAnimal();
+        System.out.println("Animal sound : " + this.sound);
+        String vagabonding = (this.isVagabonding) ? "Currently vagabonding" : "Not Vagabonding";
+        System.out.println("Animal vagabond : " + vagabonding);
+    }
 }

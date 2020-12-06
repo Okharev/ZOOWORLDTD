@@ -23,4 +23,18 @@ public class DefaultEnclosure extends Enclosure {
             System.out.println(animal.getSpecie() + " This animal does not belong here");
         }
     }
+
+    @Override
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    @Override
+    public void updateStatus() {
+        if (super.getStatus() == Enclosure.Status.GOOD) {
+            super.setStatus(Enclosure.Status.CORRECT);
+        } else if (super.getStatus() == Enclosure.Status.CORRECT) {
+            super.setStatus(Enclosure.Status.BAD);
+        }
+    }
 }

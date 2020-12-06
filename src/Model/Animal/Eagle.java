@@ -8,7 +8,7 @@ public class Eagle extends Avian{
 
 
     public Eagle(String name, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isFlying) {
-        super("auk", name, weight, height, dateOfBirth, hunger, sleeping, gender, health);
+        super("Eagle", name, weight, height, dateOfBirth, hunger, sleeping, gender, health);
 
         this.isFlying = isFlying;
         this.sound = "IckIckIckIckIckIckIckIck";
@@ -36,12 +36,12 @@ public class Eagle extends Avian{
         isFlying = flying;
     }
 
-
     @Override
     public void examineAnimal() {
         super.examineAnimal();
         System.out.println("Animal sound : " + this.sound);
-        System.out.println("Animal isVagabonding : " + this.isFlying);
+        String flying = (this.isFlying) ? "Currently flying" : "Not flying";
+        System.out.println("Animal isFlying : " + flying);
     }
 
 }
