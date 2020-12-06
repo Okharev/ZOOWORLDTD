@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class DashboardView {
 
-    private Zoo zoo;
+    private final Zoo zoo;
 
     public DashboardView(Zoo zoo) {
         this.zoo = zoo;

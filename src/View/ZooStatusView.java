@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ZooStatusView {
 
-    private Zoo zoo;
+    private final Zoo zoo;
 
     public ZooStatusView(Zoo zoo) {
         this.zoo = zoo;

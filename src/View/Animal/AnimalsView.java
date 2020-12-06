@@ -11,10 +11,10 @@ import java.util.Scanner;
 
 public class AnimalsView {
 
-    private ArrayList<Animal> animals;
-    private Enclosure enclosure;
-    private ArrayList<Enclosure> enclosures;
-    private Zoo zoo;
+    private final ArrayList<Animal> animals;
+    private final Enclosure enclosure;
+    private final ArrayList<Enclosure> enclosures;
+    private final Zoo zoo;
 
     public AnimalsView(ArrayList<Animal> animals, Enclosure enclosure, ArrayList<Enclosure> enclosures, Zoo zoo) {
         this.animals = animals;

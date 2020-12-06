@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class EnclosuresView {
 
     private ArrayList<Enclosure> enclosures;
-    private Zoo zoo;
+    private final Zoo zoo;
 
     public EnclosuresView(ArrayList<Enclosure> enclosures, Zoo zoo) {
         this.enclosures = enclosures;
