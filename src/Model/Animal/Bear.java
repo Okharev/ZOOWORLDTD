@@ -1,7 +1,5 @@
 package Model.Animal;
 
-import Model.Enclos.Enclosure;
-
 import java.util.Date;
 
 public class Bear extends Mammal {
@@ -9,7 +7,7 @@ public class Bear extends Mammal {
     public String sound;
 
     public Bear(String name, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isVagabonding) {
-        super(name,"Bear", weight, height, dateOfBirth, hunger, sleeping, gender, health);
+        super(name, "Bear", weight, height, dateOfBirth, hunger, sleeping, gender, health);
         this.isVagabonding = isVagabonding;
         this.sound = "groua";
     }

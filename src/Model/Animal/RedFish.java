@@ -2,7 +2,7 @@ package Model.Animal;
 
 import java.util.Date;
 
-public class RedFish extends Aquatic{
+public class RedFish extends Aquatic {
     public boolean isSwimmming;
     public String sound;
 
@@ -21,7 +21,9 @@ public class RedFish extends Aquatic{
         return isSwimmming;
     }
 
-    public void setSwimmming(boolean swimming) { this.isSwimmming = swimming;}
+    public void setSwimmming(boolean swimming) {
+        this.isSwimmming = swimming;
+    }
 
     public String getSound() {
         return sound;

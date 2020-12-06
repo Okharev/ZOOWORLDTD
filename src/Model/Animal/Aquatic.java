@@ -8,8 +8,7 @@ public abstract class Aquatic extends Animal {
     public Aquatic(String specie, String name, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health) {
         super(specie, name, weight, height, dateOfBirth, hunger, sleeping, gender, health);
 
-        if(gender == Gender.FEMALE)
-        {
+        if (gender == Gender.FEMALE) {
             this.canHaveOffspring = true;
         }
     }
@@ -26,7 +25,7 @@ public abstract class Aquatic extends Animal {
     public void examineAnimal() {
         super.examineAnimal();
 
-        String canHaveOffspring = (this.canHaveOffspring) ? "Can give birth": "Can not give birth";
+        String canHaveOffspring = (this.canHaveOffspring) ? "Can give birth" : "Can not give birth";
         System.out.println("Animal offspring : " + canHaveOffspring);
     }
 

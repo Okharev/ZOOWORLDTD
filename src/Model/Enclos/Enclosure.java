@@ -15,24 +15,25 @@ public abstract class Enclosure {
         System.out.println("==============CHARACTERISTICS=============");
         System.out.println("Enclosure name : " + this.name);
 
-        if(this.status == Enclosure.Status.BAD)
+        if (this.status == Enclosure.Status.BAD)
             System.out.println("\u001B[31m" + "Enclosure Status " + this.status + "\u001B[0m");
-        else if(this.status == Enclosure.Status.CORRECT)
-            System.out.println("\u001B[33m" + "Enclosure Status " + this.status +  "\u001B[0m");
+        else if (this.status == Enclosure.Status.CORRECT)
+            System.out.println("\u001B[33m" + "Enclosure Status " + this.status + "\u001B[0m");
         else
-            System.out.println(" Enclosure " + "Enclosure Status " + this.status +  "\u001B[0m");
+            System.out.println(" Enclosure " + "Enclosure Status " + this.status + "\u001B[0m");
 
         System.out.println("Enclosure area : " + this.surfaceArea);
         System.out.println("Enclosure max capacity of animals : " + this.nbMaxAnimals);
         System.out.println("Enclosure number of animals : " + this.nbCurrAnimals);
     }
 
-    public enum Status
-    {
+    public enum Status {
         GOOD,
         CORRECT,
         BAD
-    } Enclosure.Status status;
+    }
+
+    Enclosure.Status status;
 
     public Enclosure(String name, int surfaceArea, int nbMaxAnimals, ArrayList<Animal> animals, Status status) {
         this.name = name;
@@ -98,14 +99,12 @@ public abstract class Enclosure {
 
     public abstract void addAnimal(Animal animal);
 
-    public void removeAnimals(ArrayList<Animal> animals)
-    {
+    public void removeAnimals(ArrayList<Animal> animals) {
         this.animals.removeAll(animals);
         setNbCurrAnimals();
     }
 
-    public void removeAnimal(Animal animal)
-    {
+    public void removeAnimal(Animal animal) {
         this.animals.remove(animal);
 
         System.out.println(animal.getName() + " " + animal.getSpecie() + " has been removed from the zoo");
@@ -113,30 +112,25 @@ public abstract class Enclosure {
         setNbCurrAnimals();
     }
 
-    public ArrayList<Animal> getHungryAnimals()
-    {
+    public ArrayList<Animal> getHungryAnimals() {
         ArrayList<Animal> hungryAnimals = new ArrayList<>();
 
         for (Animal animal : this.animals) {
-            if(animal.isHunger())
-            {
+            if (animal.isHunger()) {
                 hungryAnimals.add(animal);
             }
         }
         return hungryAnimals;
     }
 
-    public void displayAnimals()
-    {
+    public void displayAnimals() {
         for (Animal animal : this.animals) {
             animal.toString();
         }
     }
 
-    public boolean cleanEnclosure()
-    {
-        if(this.status == Status.BAD && animals.size() == 0)
-        {
+    public boolean cleanEnclosure() {
+        if (this.status == Status.BAD && animals.size() == 0) {
             System.out.println("you can clean the enclosure");
             this.status = Status.GOOD;
             return true;
@@ -144,8 +138,7 @@ public abstract class Enclosure {
         return false;
     }
 
-    public void feedHungryAnimals()
-    {
+    public void feedHungryAnimals() {
         ArrayList<Animal> animalsToFeed = getHungryAnimals();
 
         for (Animal animal : animalsToFeed) {
@@ -154,8 +147,7 @@ public abstract class Enclosure {
         }
     }
 
-    public int getRemainingSpace()
-    {
+    public int getRemainingSpace() {
         return nbMaxAnimals - nbCurrAnimals;
     }
 

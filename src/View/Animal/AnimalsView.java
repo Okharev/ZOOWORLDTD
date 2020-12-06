@@ -6,7 +6,6 @@ import Model.Enclos.Enclosure;
 import Model.Zoo.Zoo;
 import View.Enclos.EnclosureView;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,19 +24,16 @@ public class AnimalsView {
     }
 
 
-    public void menu()
-    {
+    public void menu() {
         int selection;
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Choose from these choices");
+        System.out.println("\nChoose from these options");
+        System.out.println("==========================================");
+        System.out.println("\u001B[36m" + "1 - heal specified animals" + "\u001B[0m");
+        System.out.println("==========================================");
 
-        System.out.println("1 - Heal specified animal ");
-
-        System.out.println("-------------------------\n");
-
-        for(int i = 1; i < animals.size() + 1; i++)
-        {
+        for (int i = 1; i < animals.size() + 1; i++) {
             int count = i - 1;
             animals.get(count).examineAnimal();
         }
@@ -46,19 +42,18 @@ public class AnimalsView {
 
         System.out.println("0 - Return");
 
-        while (true)
-        {
+        while (true) {
             try {
                 selection = input.nextInt();
 
-                if(selection == 0) {
+                if (selection == 0) {
 
                     zoo.randomize();
 
                     EnclosureView enclosureView = new EnclosureView(enclosure, enclosures, zoo);
                     enclosureView.menu();
                     break;
-                } else if(selection == 1) {
+                } else if (selection == 1) {
 
                     zoo.randomize();
 
@@ -69,8 +64,7 @@ public class AnimalsView {
 
                     ArrayList<Animal> animals = enclosure.getAnimals();
 
-                    for(int i = 1; i < animals.size() + 1; i++)
-                    {
+                    for (int i = 1; i < animals.size() + 1; i++) {
                         int count = i - 1;
                         System.out.println(i + " Animal  : " + animals.get(count).getName() + "  " + animals.get(count).getSpecie());
                     }
@@ -84,7 +78,7 @@ public class AnimalsView {
                     EnclosureView enclosureView = new EnclosureView(enclosure, enclosures, zoo);
                     enclosureView.menu();
                     break;
-                } else if(selection <= this.animals.size()) {
+                } else if (selection <= this.animals.size()) {
 
                     zoo.randomize();
 
@@ -95,8 +89,7 @@ public class AnimalsView {
                     menu();
                     break;
                 }
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
                 menu();
             }
         }

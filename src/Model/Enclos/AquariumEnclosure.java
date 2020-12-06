@@ -5,27 +5,25 @@ import Model.Animal.Aquatic;
 
 import java.util.ArrayList;
 
-public class AquariumEnclosure extends Enclosure{
+public class AquariumEnclosure extends Enclosure {
 
     private float prefferedDepth;
     private float currentDepth;
     private float prefferedSaltiness;
     private float currentSaltiness;
 
-    public AquariumEnclosure(String name, int surfaceArea, int nbMaxAnimals, ArrayList<Animal> animals, Status status , float prefferedDepth, float currentDepth, float prefferedSaltiness, float currentSaltiness) {
+    public AquariumEnclosure(String name, int surfaceArea, int nbMaxAnimals, ArrayList<Animal> animals, Status status, float prefferedDepth, float currentDepth, float prefferedSaltiness, float currentSaltiness) {
         super(name, surfaceArea, nbMaxAnimals, animals, status);
 
         // Gets the abs diff between curr and desired depth and saltiness
         float depth = Math.abs(Math.abs(prefferedDepth) - Math.abs(currentDepth));
         float salt = Math.abs(Math.abs(prefferedSaltiness) - Math.abs(currentSaltiness));
 
-        if( depth >= 20 || salt >= 20) {
+        if (depth >= 20 || salt >= 20) {
             super.setStatus(DefaultEnclosure.Status.BAD);
-        }
-        else if( depth >= 10 || salt >= 10) {
+        } else if (depth >= 10 || salt >= 10) {
             super.setStatus(DefaultEnclosure.Status.CORRECT);
-        }
-        else
+        } else
             super.setStatus(DefaultEnclosure.Status.GOOD);
 
         this.prefferedDepth = prefferedDepth;
@@ -78,24 +76,18 @@ public class AquariumEnclosure extends Enclosure{
 
     }
 
-    public  void addAnimal(Animal animal)
-    {
-        if(this.getAnimals().size() < this.getNbMaxAnimals() &&  animal instanceof Aquatic)
-        {
+    public void addAnimal(Animal animal) {
+        if (this.getAnimals().size() < this.getNbMaxAnimals() && animal instanceof Aquatic) {
             this.getAnimals().add(animal);
             setNbCurrAnimals();
-        }
-        else
-        {
+        } else {
             System.out.println(animal.getSpecie() + " This animal does not belong here");
         }
     }
 
     @Override
-    public boolean cleanEnclosure()
-    {
-        if(this.status == Status.BAD && getAnimals().size() == 0)
-        {
+    public boolean cleanEnclosure() {
+        if (this.status == Status.BAD && getAnimals().size() == 0) {
             System.out.println("you can clean the enclosure");
             setCurrentDepth(getPrefferedDepth());
             setCurrentSaltiness(getPrefferedSaltiness());
@@ -115,21 +107,18 @@ public class AquariumEnclosure extends Enclosure{
     }
 
     @Override
-    public void updateStatus()
-    {
+    public void updateStatus() {
         setCurrentDepth(getCurrentDepth() - 1);
         setCurrentSaltiness(getCurrentSaltiness() + 1);
 
         float depth = Math.abs(Math.abs(prefferedDepth) - Math.abs(currentDepth));
         float salt = Math.abs(Math.abs(prefferedSaltiness) - Math.abs(currentSaltiness));
 
-        if( depth >= 20 || salt >= 20) {
+        if (depth >= 20 || salt >= 20) {
             super.setStatus(DefaultEnclosure.Status.BAD);
-        }
-        else if( depth >= 10 || salt >= 10) {
+        } else if (depth >= 10 || salt >= 10) {
             super.setStatus(DefaultEnclosure.Status.CORRECT);
-        }
-        else
+        } else
             super.setStatus(DefaultEnclosure.Status.GOOD);
     }
 

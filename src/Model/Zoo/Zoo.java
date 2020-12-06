@@ -3,6 +3,7 @@ package Model.Zoo;
 import Model.Animal.Animal;
 import Model.Employe.Employee;
 import Model.Enclos.Enclosure;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -80,8 +81,7 @@ public class Zoo {
 
         info += enclosure.getName();
 
-        for (Animal animal : enclosure.getAnimals())
-        {
+        for (Animal animal : enclosure.getAnimals()) {
             info += animal.getSpecie();
         }
 
@@ -96,11 +96,10 @@ public class Zoo {
 
             System.out.println(enclosure.getName());
 
-            for (Animal animal : enclosure.getAnimals())
-            {
-                if(animal.getHealth() == Animal.Health.SICK)
+            for (Animal animal : enclosure.getAnimals()) {
+                if (animal.getHealth() == Animal.Health.SICK)
                     System.out.println("\u001B[33m" + "Animal : " + animal.getName() + " is: " + animal.getHealth() + "\u001B[0m");
-                else if (animal.getHealth()  == Animal.Health.DEAD)
+                else if (animal.getHealth() == Animal.Health.DEAD)
                     System.out.println("\u001B[31m" + "Animal : " + animal.getName() + " is: " + animal.getHealth() + "\u001B[0m");
                 else
                     System.out.println("Animal : " + animal.getName() + " is: " + animal.getHealth());
@@ -109,30 +108,26 @@ public class Zoo {
         }
     }
 
-    public void randomize()
-    {
+    public void randomize() {
         int count = getCount();
 
         setCount(count + 1);
 
         ArrayList<Animal> allAnimals = new ArrayList<>();
 
-        for (Enclosure enclosure : this.enclosures)
-        {
+        for (Enclosure enclosure : this.enclosures) {
             allAnimals.addAll(enclosure.getAnimals());
         }
 
 
-        if(count > 20)
-        {
+        if (count > 20) {
             for (Animal animal : allAnimals) {
 
                 animal.setSleeping(false);
             }
         }
 
-        if(count > 100)
-        {
+        if (count > 100) {
             for (Animal animal : allAnimals) {
 
                 animal.setSleeping(true);
@@ -143,25 +138,22 @@ public class Zoo {
         Random r = new Random();
         int low = 0;
         int high = 100;
-        int result = r.nextInt(high-low) + low;
+        int result = r.nextInt(high - low) + low;
 
-        if(result < 5)
-        {
+        if (result < 5) {
 
             Random randomGenerator = new Random();
             int index = randomGenerator.nextInt(allAnimals.size());
             Animal animal = allAnimals.get(index);
 
-            if (animal.getHealth() == Animal.Health.SICK)
-            {
+            if (animal.getHealth() == Animal.Health.SICK) {
                 animal.setHealth(Animal.Health.DEAD);
             } else {
                 animal.setHealth(Animal.Health.SICK);
             }
         }
 
-        if(result < 8)
-        {
+        if (result < 8) {
             Random randomGenerator = new Random();
             int index = randomGenerator.nextInt(enclosures.size());
             Enclosure enclosure = enclosures.get(index);

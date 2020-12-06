@@ -1,13 +1,13 @@
 package com.company;
 
 import Model.Animal.*;
+import Model.Employe.Employee;
 import Model.Enclos.AquariumEnclosure;
 import Model.Enclos.AvarianEnclosure;
-import View.DashboardView;
-import Model.Employe.Employee;
 import Model.Enclos.DefaultEnclosure;
 import Model.Enclos.Enclosure;
 import Model.Zoo.Zoo;
+import View.DashboardView;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -24,51 +24,51 @@ public class Main {
         DefaultEnclosure mammalTempEnclosure = new DefaultEnclosure("Enclos 2", 150, 20, new ArrayList<>(), Enclosure.Status.BAD);
         DefaultEnclosure mammalTempEnclosureTwo = new DefaultEnclosure("Enclos 3", 150, 20, new ArrayList<>(), Enclosure.Status.CORRECT);
 
-        Tiger myTiger1 = new Tiger("Nelledu",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Wolf myWolf1 = new Wolf("Tychou",15, 18, new Date(), true, true , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Tiger myTiger2 = new Tiger("Llenta",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Tiger myTiger1 = new Tiger("Nelledu", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Wolf myWolf1 = new Wolf("Tychou", 15, 18, new Date(), true, true, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Tiger myTiger2 = new Tiger("Llenta", 15, 18, new Date(), true, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
 
-        Tiger myTiger3 = new Tiger("Settegyp", 15, 18, new Date(), false, false , Animal.Gender.FEMALE, Animal.Health.SICK, true);
-        Bear myBear1 = new Bear("Gomspag",15, 18, new Date(), true, true , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Wolf myWolf2 = new Wolf("Kirlon",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Tiger myTiger3 = new Tiger("Settegyp", 15, 18, new Date(), false, false, Animal.Gender.FEMALE, Animal.Health.SICK, true);
+        Bear myBear1 = new Bear("Gomspag", 15, 18, new Date(), true, true, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Wolf myWolf2 = new Wolf("Kirlon", 15, 18, new Date(), true, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
 
-        Wolf myWolf3 = new Wolf("Endex", 15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Bear myBear2 = new Bear("Gizdle",15, 18, new Date(), true, true , Animal.Gender.MALE, Animal.Health.SICK, true);
-        Bear myBear3 = new Bear("Sutag",15, 18, new Date(), true, false , Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
+        Wolf myWolf3 = new Wolf("Endex", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Bear myBear2 = new Bear("Gizdle", 15, 18, new Date(), true, true, Animal.Gender.MALE, Animal.Health.SICK, true);
+        Bear myBear3 = new Bear("Sutag", 15, 18, new Date(), true, false, Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
 
         //Aquatic
-        AquariumEnclosure aquariumEnclosure = new AquariumEnclosure("Aquarium 1", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD, 50, 40, 50,  40);
-        AquariumEnclosure aquariumTempEnclosure = new AquariumEnclosure("Aquarium 2", 150, 20, new ArrayList<>(), Enclosure.Status.BAD, 50, 30, 50,  60);
-        AquariumEnclosure aquariumTemp1Enclosure = new AquariumEnclosure("Aquarium 3", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD, 50, 40, 50,  40);
+        AquariumEnclosure aquariumEnclosure = new AquariumEnclosure("Aquarium 1", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD, 50, 40, 50, 40);
+        AquariumEnclosure aquariumTempEnclosure = new AquariumEnclosure("Aquarium 2", 150, 20, new ArrayList<>(), Enclosure.Status.BAD, 50, 30, 50, 60);
+        AquariumEnclosure aquariumTemp1Enclosure = new AquariumEnclosure("Aquarium 3", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD, 50, 40, 50, 40);
 
-        RedFish myRedFish1 = new RedFish("Xyban",15, 18, new Date(), false, false , Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
-        Shark myShark1 = new Shark("Rasto",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.SICK, true);
-        Whale myWhale1 = new Whale("Willy",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        RedFish myRedFish1 = new RedFish("Xyban", 15, 18, new Date(), false, false, Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
+        Shark myShark1 = new Shark("Rasto", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.SICK, true);
+        Whale myWhale1 = new Whale("Willy", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
 
-        Whale myWhale2 = new Whale("Yogi",15, 18, new Date(), false, false , Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
-        Whale myWhale3 = new Whale("Curspag",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        RedFish RedFish2 = new RedFish("Dory",15, 18, new Date(), false, false , Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
+        Whale myWhale2 = new Whale("Yogi", 15, 18, new Date(), false, false, Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
+        Whale myWhale3 = new Whale("Curspag", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        RedFish RedFish2 = new RedFish("Dory", 15, 18, new Date(), false, false, Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
 
-        Shark myShark2 = new Shark("Shiru",15, 18, new Date(), false, false , Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
-        Shark myShark3 = new Shark("Choume",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.SICK, true);
-        RedFish RedFish3 = new RedFish("Nemo",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Shark myShark2 = new Shark("Shiru", 15, 18, new Date(), false, false, Animal.Gender.FEMALE, Animal.Health.HEALTHY, true);
+        Shark myShark3 = new Shark("Choume", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.SICK, true);
+        RedFish RedFish3 = new RedFish("Nemo", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
 
         //Avian
         AvarianEnclosure avarianEnclosure = new AvarianEnclosure("Aviary 1", 150, 20, new ArrayList<>(), Enclosure.Status.CORRECT, 50, 40);
         AvarianEnclosure avarianTempEnclosure = new AvarianEnclosure("Aviary 2", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD, 50, 50);
         AvarianEnclosure avarianTemp1Enclosure = new AvarianEnclosure("Aviary 3", 150, 20, new ArrayList<>(), Enclosure.Status.BAD, 50, 30);
 
-        Eagle myEagle1 = new Eagle("Cetteab",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Auk myAuk1 = new Auk("Terchou",15, 18, new Date(), false, false , Animal.Gender.FEMALE, Animal.Health.SICK, true, false, false);
-        Eagle myEagle2 = new Eagle("Bisney",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Eagle myEagle1 = new Eagle("Cetteab", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Auk myAuk1 = new Auk("Terchou", 15, 18, new Date(), false, false, Animal.Gender.FEMALE, Animal.Health.SICK, true, false, false);
+        Eagle myEagle2 = new Eagle("Bisney", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
 
-        Eagle myEagle3 = new Eagle("Fisa",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Eagle myEagle4 = new Eagle("Nebouille",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Auk myAuk2 = new Auk("Saki",15, 18, new Date(), false, false , Animal.Gender.FEMALE, Animal.Health.HEALTHY, false, false, true);
+        Eagle myEagle3 = new Eagle("Fisa", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Eagle myEagle4 = new Eagle("Nebouille", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Auk myAuk2 = new Auk("Saki", 15, 18, new Date(), false, false, Animal.Gender.FEMALE, Animal.Health.HEALTHY, false, false, true);
 
-        Auk myAuk3 = new Auk("Ookcho",15, 18, new Date(), false, false , Animal.Gender.FEMALE, Animal.Health.SICK, false, true,false);
-        Eagle myEagle5 = new Eagle("Ome",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Auk myAuk4 = new Auk("Gauma",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, false, false, true);
+        Auk myAuk3 = new Auk("Ookcho", 15, 18, new Date(), false, false, Animal.Gender.FEMALE, Animal.Health.SICK, false, true, false);
+        Eagle myEagle5 = new Eagle("Ome", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Auk myAuk4 = new Auk("Gauma", 15, 18, new Date(), false, false, Animal.Gender.MALE, Animal.Health.HEALTHY, false, false, true);
 
 
         //Mammal

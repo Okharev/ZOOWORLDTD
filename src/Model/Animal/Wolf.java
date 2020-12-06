@@ -1,7 +1,5 @@
 package Model.Animal;
 
-import Model.Enclos.Enclosure;
-
 import java.util.Date;
 
 public class Wolf extends Mammal {

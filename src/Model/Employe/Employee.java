@@ -4,7 +4,6 @@ import Model.Animal.Animal;
 import Model.Enclos.Enclosure;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Employee {
 
@@ -50,33 +49,31 @@ public class Employee {
                 '}';
     }
 
-    public enum Sex
-    {
+    public enum Sex {
         MALE,
         FEMALE,
         OTHER
-    } Employee.Sex sex;
+    }
 
-    public void cleanEnclosure(Enclosure enclosure, Enclosure newEnclosure)
-    {
-        if(enclosure != newEnclosure && enclosure.getClass().getName().equals(newEnclosure.getClass().getName()))
-        {
+    Employee.Sex sex;
+
+    public void cleanEnclosure(Enclosure enclosure, Enclosure newEnclosure) {
+        if (enclosure != newEnclosure && enclosure.getClass().getName().equals(newEnclosure.getClass().getName())) {
             System.out.println(enclosure.getClass().getName() + "   " + newEnclosure.getClass().getName());
 
             ArrayList<Animal> enclosureAnimals = enclosure.getAnimals();
 
             ArrayList<Animal> animalsToDelete = new ArrayList<>();
-            for (Animal animal: enclosureAnimals) {
+            for (Animal animal : enclosureAnimals) {
                 animalsToDelete.add(animal);
                 newEnclosure.addAnimal(animal);
             }
 
             enclosure.removeAnimals(animalsToDelete);
 
-            if(enclosure.cleanEnclosure())
-            {
+            if (enclosure.cleanEnclosure()) {
                 ArrayList<Animal> animalsToDeleteTemp = new ArrayList<>();
-                for (Animal animal: animalsToDelete) {
+                for (Animal animal : animalsToDelete) {
                     animalsToDeleteTemp.add(animal);
                     enclosure.addAnimal(animal);
                 }
@@ -87,15 +84,12 @@ public class Employee {
         }
     }
 
-    public String examineEnclosure(Enclosure enclosure)
-    {
+    public String examineEnclosure(Enclosure enclosure) {
         return enclosure.toString();
     }
 
-    public void moveToNewEnclosure(Enclosure oldEnclosure, Animal animal ,Enclosure newEnclosure)
-    {
-        if(newEnclosure.getRemainingSpace() > 0 && oldEnclosure.getClass().getName().equals(newEnclosure.getClass().getName()))
-        {
+    public void moveToNewEnclosure(Enclosure oldEnclosure, Animal animal, Enclosure newEnclosure) {
+        if (newEnclosure.getRemainingSpace() > 0 && oldEnclosure.getClass().getName().equals(newEnclosure.getClass().getName())) {
             oldEnclosure.removeAnimal(animal);
             newEnclosure.addAnimal(animal);
         } else {
@@ -103,18 +97,15 @@ public class Employee {
         }
     }
 
-    public void healAnimal(Animal animalToHeal)
-    {
-        if(animalToHeal.getHealth() != Animal.Health.HEALTHY)
-        {
+    public void healAnimal(Animal animalToHeal) {
+        if (animalToHeal.getHealth() != Animal.Health.HEALTHY) {
             animalToHeal.setHealth(Animal.Health.HEALTHY);
 
             System.out.println("Animal : " + animalToHeal.getName() + " " + animalToHeal.getSpecie() + " Has been Healed with success \n");
         }
     }
 
-    public void feedEnclosure(Enclosure enclosure)
-    {
+    public void feedEnclosure(Enclosure enclosure) {
         System.out.println("\n");
         enclosure.feedHungryAnimals();
     }

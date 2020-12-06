@@ -1,17 +1,15 @@
 package Model.Animal;
 
-import Model.Enclos.DefaultEnclosure;
-
 import java.util.Date;
 
-public class Auk extends Avian{
+public class Auk extends Avian {
     public boolean isSwimmming;
     public boolean isWalking;
     public boolean isFlying;
     public String sound;
 
 
-        public Auk(String name, int weight,  int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isSwimmming, boolean isWalking, boolean isFlying) {
+    public Auk(String name, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isSwimmming, boolean isWalking, boolean isFlying) {
         super("Auk", name, weight, height, dateOfBirth, hunger, sleeping, gender, health);
 
         this.isSwimmming = isSwimmming;
@@ -29,7 +27,9 @@ public class Auk extends Avian{
         return isSwimmming;
     }
 
-    public void setSwimmming(boolean swimming) { this.isSwimmming = swimming;}
+    public void setSwimmming(boolean swimming) {
+        this.isSwimmming = swimming;
+    }
 
     public String getSound() {
         return sound;

@@ -27,21 +27,18 @@ public class DashboardView {
 
         System.out.println("0 - Quit \n");
 
-        while (true)
-        {
+        while (true) {
             try {
                 selection = input.nextInt();
 
-                if(selection == 1)
-                {
+                if (selection == 1) {
 
                     zoo.randomize();
                     EnclosuresView enclosView = new EnclosuresView(zoo.getEnclosures(), zoo);
                     enclosView.menu();
                     break;
                 }
-                if(selection == 2)
-                {
+                if (selection == 2) {
 
                     zoo.randomize();
 
@@ -49,8 +46,7 @@ public class DashboardView {
                     ZooStatusView.menu();
                     break;
                 }
-                if(selection == 3)
-                {
+                if (selection == 3) {
 
                     zoo.randomize();
 
@@ -64,8 +60,7 @@ public class DashboardView {
                     menu();
                     break;
                 }
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
                 menu();
             }
         }

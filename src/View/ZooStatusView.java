@@ -3,7 +3,6 @@ package View;
 import Model.Enclos.Enclosure;
 import Model.Zoo.Zoo;
 
-
 import java.util.Scanner;
 
 public class ZooStatusView {
@@ -21,9 +20,8 @@ public class ZooStatusView {
         System.out.println("Your Zoo Status");
         System.out.println("================Enclosures=================");
 
-        for(Enclosure enclosure : zoo.getEnclosures())
-        {
-            if(enclosure.getStatus() == Enclosure.Status.BAD)
+        for (Enclosure enclosure : zoo.getEnclosures()) {
+            if (enclosure.getStatus() == Enclosure.Status.BAD)
                 System.out.println("\u001B[31m" + "Enclosure " + enclosure.getName() + " " + enclosure.getStatus() + "\u001B[0m");
             else if (enclosure.getStatus() == Enclosure.Status.CORRECT)
                 System.out.println("\u001B[33m" + "Enclosure " + enclosure.getName() + " " + enclosure.getStatus() + "\u001B[0m");
@@ -33,12 +31,11 @@ public class ZooStatusView {
 
         System.out.println("=================Animals===================");
 
-         zoo.animalsInfoZoo();
+        zoo.animalsInfoZoo();
 
         System.out.println("0 - Return \n");
 
-        while (true)
-        {
+        while (true) {
             try {
                 selection = input.nextInt();
 
@@ -52,8 +49,7 @@ public class ZooStatusView {
                     menu();
                     break;
                 }
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
                 menu();
             }
         }

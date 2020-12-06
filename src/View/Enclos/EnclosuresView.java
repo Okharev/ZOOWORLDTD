@@ -2,7 +2,6 @@ package View.Enclos;
 
 import Model.Enclos.Enclosure;
 import Model.Zoo.Zoo;
-import View.Animal.AnimalsView;
 import View.DashboardView;
 
 import java.util.ArrayList;
@@ -19,21 +18,19 @@ public class EnclosuresView {
     }
 
 
-    public void menu()
-    {
+    public void menu() {
         int selection;
         Scanner input = new Scanner(System.in);
 
         System.out.println("Examine which enclosure");
         System.out.println("==========================================");
 
-        for(int i = 1; i < enclosures.size() + 1; i++)
-        {
+        for (int i = 1; i < enclosures.size() + 1; i++) {
             int count = i - 1;
 
-            if(enclosures.get(count).getStatus() == Enclosure.Status.BAD)
+            if (enclosures.get(count).getStatus() == Enclosure.Status.BAD)
                 System.out.println("\u001B[31m" + i + " - " + enclosures.get(count).getName() + "\u001B[0m");
-            else if(enclosures.get(count).getStatus() == Enclosure.Status.CORRECT)
+            else if (enclosures.get(count).getStatus() == Enclosure.Status.CORRECT)
                 System.out.println("\u001B[33m" + i + " - " + enclosures.get(count).getName() + "\u001B[0m");
             else
                 System.out.println(i + " - " + enclosures.get(count).getName() + "\u001B[0m");
@@ -41,8 +38,7 @@ public class EnclosuresView {
 
         System.out.println("\n0 - Return");
 
-        while (true)
-        {
+        while (true) {
             try {
                 selection = input.nextInt();
 
@@ -52,8 +48,7 @@ public class EnclosuresView {
                     DashboardView dashboardView = new DashboardView(this.zoo);
                     dashboardView.menu();
                     break;
-                } else if(selection <= enclosures.size())
-                {
+                } else if (selection <= enclosures.size()) {
                     zoo.randomize();
 
                     EnclosureView enclosureView = new EnclosureView(this.enclosures.get(selection - 1), enclosures, zoo);
@@ -66,8 +61,7 @@ public class EnclosuresView {
                     menu();
                     break;
                 }
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
                 menu();
             }
         }

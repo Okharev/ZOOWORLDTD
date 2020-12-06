@@ -1,16 +1,13 @@
 package Model.Animal;
 
 
-import Model.Enclos.DefaultEnclosure;
-import Model.Enclos.Enclosure;
-
 import java.util.Date;
 
 public class Tiger extends Mammal {
     public boolean isVagabonding;
     public String sound;
 
-    public Tiger(String name, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health,  boolean isVagabonding) {
+    public Tiger(String name, int weight, int height, Date dateOfBirth, boolean hunger, boolean sleeping, Gender gender, Health health, boolean isVagabonding) {
         super(name, "Tiger", weight, height, dateOfBirth, hunger, sleeping, gender, health);
         this.sound = "Rawr";
     }
@@ -21,14 +18,13 @@ public class Tiger extends Mammal {
         return super.makeSound(this.sound);
     }
 
-     @Override
-     public void setSleeping(boolean sleeping) {
-         super.setSleeping(sleeping);
-         if(sleeping)
-         {
-             setVagabonding(false);
-         }
-     }
+    @Override
+    public void setSleeping(boolean sleeping) {
+        super.setSleeping(sleeping);
+        if (sleeping) {
+            setVagabonding(false);
+        }
+    }
 
     public boolean isVagabonding() {
         return isVagabonding;

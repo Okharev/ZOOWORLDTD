@@ -22,8 +22,7 @@ public class EnclosureView {
     }
 
 
-    public void menu()
-    {
+    public void menu() {
         int selection;
         Scanner input = new Scanner(System.in);
 
@@ -40,12 +39,11 @@ public class EnclosureView {
 
         System.out.println("\n0 - Return");
 
-        while (true)
-        {
+        while (true) {
             try {
                 selection = input.nextInt();
 
-                if(selection == 1) {
+                if (selection == 1) {
                     AnimalsView animalsView = new AnimalsView(this.enclosure.getAnimals(), this.enclosure, this.enclosures, zoo);
                     animalsView.menu();
                     break;
@@ -55,8 +53,7 @@ public class EnclosureView {
                     int selectionCleaning;
                     Scanner inputCleaning = new Scanner(System.in);
 
-                    for(int i = 1; i < enclosures.size() + 1; i++)
-                    {
+                    for (int i = 1; i < enclosures.size() + 1; i++) {
                         int count = i - 1;
                         System.out.println(i + " Enclosure " + enclosures.get(count).getName());
                     }
@@ -90,8 +87,7 @@ public class EnclosureView {
 
                     ArrayList<Animal> animals = enclosure.getAnimals();
 
-                    for(int i = 1; i < animals.size() + 1; i++)
-                    {
+                    for (int i = 1; i < animals.size() + 1; i++) {
                         int count = i - 1;
                         System.out.println(i + " Animal  : " + animals.get(count).getName() + "  " + animals.get(count).getSpecie());
                     }
@@ -103,8 +99,7 @@ public class EnclosureView {
                     int selectionEnclosure;
                     Scanner inputEnclosure = new Scanner(System.in);
 
-                    for(int i = 1; i < enclosures.size() + 1; i++)
-                    {
+                    for (int i = 1; i < enclosures.size() + 1; i++) {
                         int count = i - 1;
                         System.out.println(i + " Enclosure " + enclosures.get(count).getName());
                     }
@@ -113,7 +108,7 @@ public class EnclosureView {
 
                     Employee employee = zoo.getEmployee();
 
-                    employee.moveToNewEnclosure(enclosure, animals.get(selectionAnimal - 1) , enclosures.get(selectionEnclosure - 1));
+                    employee.moveToNewEnclosure(enclosure, animals.get(selectionAnimal - 1), enclosures.get(selectionEnclosure - 1));
 
                     EnclosureView enclosureView = new EnclosureView(this.enclosure, enclosures, zoo);
                     enclosureView.menu();
@@ -129,8 +124,7 @@ public class EnclosureView {
 
                     ArrayList<Animal> animals = enclosure.getAnimals();
 
-                    for(int i = 1; i < animals.size() + 1; i++)
-                    {
+                    for (int i = 1; i < animals.size() + 1; i++) {
                         int count = i - 1;
                         System.out.println(i + " Animal  : " + animals.get(count).getName() + "  " + animals.get(count).getSpecie());
                     }
@@ -155,8 +149,7 @@ public class EnclosureView {
 
                     break;
                 }
-            } catch (Exception e)
-            {
+            } catch (Exception e) {
                 menu();
             }
         }

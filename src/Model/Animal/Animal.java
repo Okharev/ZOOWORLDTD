@@ -45,7 +45,7 @@ public abstract class Animal {
         String sleep = (this.sleeping) ? "Sleeping" : "Not Sleeping";
         System.out.println("is the animal sleeping : " + sleep);
         System.out.println("Animal gender : " + this.gender);
-        if(this.health == Health.SICK)
+        if (this.health == Health.SICK)
             System.out.println("\u001B[33m" + "Animal health : " + this.health + "\u001B[0m");
         else if (this.health == Health.DEAD)
             System.out.println("\u001B[31m" + "Animal health : " + this.health + "\u001B[0m");
@@ -154,7 +154,6 @@ public abstract class Animal {
     public void heal(Health health) {
         health = this.health;
     }
-
 
 
 }

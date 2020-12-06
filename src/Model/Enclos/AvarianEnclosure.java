@@ -15,9 +15,9 @@ public class AvarianEnclosure extends Enclosure {
 
         float height = Math.abs(Math.abs(preferredHeight) - Math.abs(currentHeight));
 
-        if( height >= 20 && status != Status.BAD )
+        if (height >= 20 && status != Status.BAD)
             super.setStatus(DefaultEnclosure.Status.BAD);
-        else if( height >= 10 && status != Status.CORRECT && status != Status.BAD )
+        else if (height >= 10 && status != Status.CORRECT && status != Status.BAD)
             super.setStatus(DefaultEnclosure.Status.CORRECT);
 
         this.preferredHeight = preferredHeight;
@@ -49,24 +49,18 @@ public class AvarianEnclosure extends Enclosure {
         System.out.println("Enclosure currentDepth : " + this.currentHeight);
     }
 
-    public  void addAnimal(Animal animal)
-    {
-        if(this.getAnimals().size() < this.getNbMaxAnimals() &&  animal instanceof Avian)
-        {
+    public void addAnimal(Animal animal) {
+        if (this.getAnimals().size() < this.getNbMaxAnimals() && animal instanceof Avian) {
             this.getAnimals().add(animal);
             setNbCurrAnimals();
-        }
-        else
-        {
+        } else {
             System.out.println(animal.getSpecie() + " This animal does not belong here");
         }
     }
 
     @Override
-    public boolean cleanEnclosure()
-    {
-        if(this.status == Status.BAD && getAnimals().size() == 0)
-        {
+    public boolean cleanEnclosure() {
+        if (this.status == Status.BAD && getAnimals().size() == 0) {
             System.out.println("you can clean the enclosure");
             setCurrentHeight(getPreferredHeight());
 
@@ -84,15 +78,14 @@ public class AvarianEnclosure extends Enclosure {
     }
 
     @Override
-    public void updateStatus()
-    {
+    public void updateStatus() {
         setCurrentHeight(getCurrentHeight() - 1);
 
         float height = Math.abs(Math.abs(preferredHeight) - Math.abs(currentHeight));
 
-        if( height >= 20 && status != Status.BAD )
+        if (height >= 20 && status != Status.BAD)
             super.setStatus(DefaultEnclosure.Status.BAD);
-        else if( height >= 10 && status != Status.CORRECT && status != Status.BAD )
+        else if (height >= 10 && status != Status.CORRECT && status != Status.BAD)
             super.setStatus(DefaultEnclosure.Status.CORRECT);
     }
 }

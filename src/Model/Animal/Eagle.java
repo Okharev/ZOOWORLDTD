@@ -2,7 +2,7 @@ package Model.Animal;
 
 import java.util.Date;
 
-public class Eagle extends Avian{
+public class Eagle extends Avian {
     public boolean isFlying;
     public String sound;
 
