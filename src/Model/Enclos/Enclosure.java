@@ -14,7 +14,14 @@ public abstract class Enclosure {
     public void examineEnclosure() {
         System.out.println("==============CHARACTERISTICS=============");
         System.out.println("Enclosure name : " + this.name);
-        System.out.println("Enclosure Status : " + this.status);
+
+        if(this.status == Enclosure.Status.BAD)
+            System.out.println("\u001B[31m" + "Enclosure Status " + this.status + "\u001B[0m");
+        else if(this.status == Enclosure.Status.CORRECT)
+            System.out.println("\u001B[33m" + "Enclosure Status " + this.status +  "\u001B[0m");
+        else
+            System.out.println(" Enclosure " + "Enclosure Status " + this.status +  "\u001B[0m");
+
         System.out.println("Enclosure area : " + this.surfaceArea);
         System.out.println("Enclosure max capacity of animals : " + this.nbMaxAnimals);
         System.out.println("Enclosure number of animals : " + this.nbCurrAnimals);
@@ -84,6 +91,11 @@ public abstract class Enclosure {
         this.status = status;
     }
 
+    public void updateStatus() {
+
+    }
+
+
     public abstract void addAnimal(Animal animal);
 
     public void removeAnimals(ArrayList<Animal> animals)
@@ -95,6 +107,9 @@ public abstract class Enclosure {
     public void removeAnimal(Animal animal)
     {
         this.animals.remove(animal);
+
+        System.out.println(animal.getName() + " " + animal.getSpecie() + " has been removed from the zoo");
+
         setNbCurrAnimals();
     }
 

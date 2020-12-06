@@ -42,17 +42,6 @@ public class AvarianEnclosure extends Enclosure {
     }
 
     @Override
-    public boolean cleanEnclosure() {
-        if(this.status == Status.BAD)
-        {
-            System.out.println("you can clean the enclosure");
-            this.status = Status.GOOD;
-            return true;
-        }
-        return false;
-    }
-
-    @Override
     public String toString() {
         return "AvarianEnclosure{" +
                  super.toString() +
@@ -72,5 +61,39 @@ public class AvarianEnclosure extends Enclosure {
         {
             System.out.println(animal.getSpecie() + " This animal does not belong here");
         }
+    }
+
+    @Override
+    public boolean cleanEnclosure()
+    {
+        if(this.status == Status.BAD && getAnimals().size() == 0)
+        {
+            System.out.println("you can clean the enclosure");
+            setCurrentHeight(getPreferredHeight());
+
+            System.out.println("Height is now : " + getCurrentHeight());
+
+            this.status = Status.GOOD;
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    @Override
+    public void updateStatus()
+    {
+        setCurrentHeight(getCurrentHeight() - 1);
+
+        float height = Math.abs(Math.abs(preferredHeight) - Math.abs(currentHeight));
+
+        if( height >= 20 && status != Status.BAD )
+            super.setStatus(DefaultEnclosure.Status.BAD);
+        else if( height >= 10 && status != Status.CORRECT && status != Status.BAD )
+            super.setStatus(DefaultEnclosure.Status.CORRECT);
     }
 }

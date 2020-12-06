@@ -22,11 +22,22 @@ public class Main {
     public static void main(String[] args) {
 
 
-       /* DefaultEnclosure mammalEnclosure = new DefaultEnclosure("Mammal enclo need cleaning 1", 150, 20, new ArrayList<>(), Enclosure.Status.BAD);
-
+        DefaultEnclosure mammalEnclosure = new DefaultEnclosure("Mammal enclo need cleaning 1", 150, 20, new ArrayList<>(), Enclosure.Status.BAD);
         DefaultEnclosure mammalTempEnclosure = new DefaultEnclosure("Mammal enclo 1 tempo", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD);
-
         DefaultEnclosure mammalTempEnclosureTwo = new DefaultEnclosure("Mammal enclo 1 tempo", 150, 20, new ArrayList<>(), Enclosure.Status.BAD);
+
+        AquariumEnclosure AquariumEnclosure = new AquariumEnclosure("Aquarium", 150, 20, new ArrayList<>(), Enclosure.Status.BAD, 50, 41, 50,  59);
+        AquariumEnclosure AquariumEnclosureTemp = new AquariumEnclosure("Aquarium", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD, 50, 41, 50,  59);
+
+
+        Whale myWhale1 = new Whale("Wammu",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Whale myWhale2 = new Whale("Wammu",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+        Whale myWhale3 = new Whale("Wammu",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
+
+        AquariumEnclosure.addAnimal(myWhale1);
+        AquariumEnclosure.addAnimal(myWhale2);
+        AquariumEnclosure.addAnimal(myWhale3);
+
 
         Tiger myTiger1 = new Tiger("Wammu",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
         Tiger myTiger2 = new Tiger("ACDC",15, 18, new Date(), true, true , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
@@ -56,30 +67,19 @@ public class Main {
         enclosures.add(mammalEnclosure);
         enclosures.add(mammalTempEnclosure);
         enclosures.add(mammalTempEnclosureTwo);
+        enclosures.add(AquariumEnclosure);
+        enclosures.add(AquariumEnclosureTemp);
+
 
         Employee employee = new Employee("Zubi", 30, Employee.Sex.FEMALE);
 
         Zoo myZoo = new Zoo("Zooland", employee, 20, enclosures);
 
-        System.out.println(myZoo.enclosureInfo(mammalEnclosure));
-
 
         DashboardView dash = new DashboardView(myZoo);
 
-        dash.menu();*/
+        dash.menu();
 
-        Whale myWhale = new Whale("Wammu",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-
-        Tiger Tigrou = new Tiger("Tigrou",15, 18, new Date(), false, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-        Wolf Teen = new Wolf("Teen",15, 18, new Date(), true, false , Animal.Gender.MALE, Animal.Health.HEALTHY, true);
-
-
-        AquariumEnclosure AquariumEnclosure = new AquariumEnclosure("Aquarium", 150, 20, new ArrayList<>(), Enclosure.Status.GOOD, 50, 40, 50,  40);
-        AquariumEnclosure.addAnimal(myWhale);
-        AquariumEnclosure.addAnimal(Tigrou);
-        AquariumEnclosure.addAnimal(Teen);
-
-        AquariumEnclosure.examineEnclosure();
 
     }
 }

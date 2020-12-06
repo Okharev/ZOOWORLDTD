@@ -90,4 +90,47 @@ public class AquariumEnclosure extends Enclosure{
             System.out.println(animal.getSpecie() + " This animal does not belong here");
         }
     }
+
+    @Override
+    public boolean cleanEnclosure()
+    {
+        if(this.status == Status.BAD && getAnimals().size() == 0)
+        {
+            System.out.println("you can clean the enclosure");
+            setCurrentDepth(getPrefferedDepth());
+            setCurrentSaltiness(getPrefferedSaltiness());
+
+            System.out.println("Depth is now : " + getCurrentDepth());
+            System.out.println("Saltiness is now : " + getCurrentSaltiness());
+
+            super.setStatus(Status.GOOD);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    @Override
+    public void updateStatus()
+    {
+        setCurrentDepth(getCurrentDepth() - 1);
+        setCurrentSaltiness(getCurrentSaltiness() + 1);
+
+        float depth = Math.abs(Math.abs(prefferedDepth) - Math.abs(currentDepth));
+        float salt = Math.abs(Math.abs(prefferedSaltiness) - Math.abs(currentSaltiness));
+
+        if( depth >= 20 || salt >= 20) {
+            super.setStatus(DefaultEnclosure.Status.BAD);
+        }
+        else if( depth >= 10 || salt >= 10) {
+            super.setStatus(DefaultEnclosure.Status.CORRECT);
+        }
+        else
+            super.setStatus(DefaultEnclosure.Status.GOOD);
+    }
+
 }

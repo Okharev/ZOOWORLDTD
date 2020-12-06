@@ -27,5 +27,4 @@ public abstract class Avian extends Animal{
         super.examineAnimal();
         System.out.println("Animal can have offspring : " + this.isCanHaveOffspring());
     }
-
 }

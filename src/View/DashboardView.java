@@ -20,8 +20,8 @@ public class DashboardView {
 
         System.out.println("Welcome To your Zoo " + this.zoo.getName());
         System.out.println("==========================================");
-        System.out.println("1 - Zoo Enclosures ");
-        System.out.println("2 - Zoo status \n");
+        System.out.println("\u001B[36m" + "1 - Zoo Enclosures ");
+        System.out.println("2 - Zoo status \n" + "\u001B[0m");
 
         System.out.println("Taking care of : " + zoo.nbAnimalsInZoo() + " Animals \n");
 
@@ -34,22 +34,33 @@ public class DashboardView {
 
                 if(selection == 1)
                 {
+
+                    zoo.randomize();
                     EnclosuresView enclosView = new EnclosuresView(zoo.getEnclosures(), zoo);
                     enclosView.menu();
                     break;
                 }
                 if(selection == 2)
                 {
+
+                    zoo.randomize();
+
                     ZooStatusView ZooStatusView = new ZooStatusView(zoo);
                     ZooStatusView.menu();
                     break;
                 }
                 if(selection == 3)
                 {
+
+                    zoo.randomize();
+
                     EnclosuresView enclosView = new EnclosuresView(zoo.getEnclosures(), zoo);
                     enclosView.menu();
                     break;
                 } else {
+
+                    zoo.randomize();
+
                     menu();
                     break;
                 }

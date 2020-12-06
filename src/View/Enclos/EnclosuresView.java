@@ -30,7 +30,13 @@ public class EnclosuresView {
         for(int i = 1; i < enclosures.size() + 1; i++)
         {
             int count = i - 1;
-            System.out.println(i + " Enclosure " + enclosures.get(count).getName());
+
+            if(enclosures.get(count).getStatus() == Enclosure.Status.BAD)
+                System.out.println("\u001B[31m" + i + " Enclosure " + enclosures.get(count).getName() + "\u001B[0m");
+            else if(enclosures.get(count).getStatus() == Enclosure.Status.CORRECT)
+                System.out.println("\u001B[33m" + i + " Enclosure " + enclosures.get(count).getName() + "\u001B[0m");
+            else
+                System.out.println(i + " Enclosure " + enclosures.get(count).getName() + "\u001B[0m");
         }
 
         System.out.println("\n0 - Return");
@@ -41,15 +47,22 @@ public class EnclosuresView {
                 selection = input.nextInt();
 
                 if (selection == 0) {
+                    zoo.randomize();
+
                     DashboardView dashboardView = new DashboardView(this.zoo);
                     dashboardView.menu();
                     break;
                 } else if(selection <= enclosures.size())
                 {
+                    zoo.randomize();
+
                     EnclosureView enclosureView = new EnclosureView(this.enclosures.get(selection - 1), enclosures, zoo);
                     enclosureView.menu();
                     break;
                 } else {
+
+                    zoo.randomize();
+
                     menu();
                     break;
                 }

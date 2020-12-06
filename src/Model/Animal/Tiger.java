@@ -21,6 +21,15 @@ public class Tiger extends Mammal {
         return super.makeSound(this.sound);
     }
 
+     @Override
+     public void setSleeping(boolean sleeping) {
+         super.setSleeping(sleeping);
+         if(sleeping)
+         {
+             setVagabonding(false);
+         }
+     }
+
     public boolean isVagabonding() {
         return isVagabonding;
     }

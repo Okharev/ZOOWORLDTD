@@ -48,10 +48,16 @@ public class AnimalsView {
                 selection = input.nextInt();
 
                 if(selection == 0) {
+
+                    zoo.randomize();
+
                     EnclosureView enclosureView = new EnclosureView(enclosure, enclosures, zoo);
                     enclosureView.menu();
                     break;
                 } else if(selection <= this.animals.size()) {
+
+                    zoo.randomize();
+
                     AnimalView animalView = new AnimalView(this.animals.get(selection - 1), animals, enclosure, enclosures, zoo);
                     animalView.menu();
                     break;
