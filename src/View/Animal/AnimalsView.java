@@ -1,6 +1,7 @@
 package View.Animal;
 
 import Model.Animal.Animal;
+import Model.Employe.Employee;
 import Model.Enclos.Enclosure;
 import Model.Zoo.Zoo;
 import View.Enclos.EnclosureView;
@@ -30,6 +31,9 @@ public class AnimalsView {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Choose from these choices");
+
+        System.out.println("1 - Heal specified animal ");
+
         System.out.println("-------------------------\n");
 
         for(int i = 1; i < animals.size() + 1; i++)
@@ -50,6 +54,32 @@ public class AnimalsView {
                 if(selection == 0) {
 
                     zoo.randomize();
+
+                    EnclosureView enclosureView = new EnclosureView(enclosure, enclosures, zoo);
+                    enclosureView.menu();
+                    break;
+                } else if(selection == 1) {
+
+                    zoo.randomize();
+
+                    System.out.println("what animal to heal : ");
+
+                    int selectionAnimal;
+                    Scanner inputAnimal = new Scanner(System.in);
+
+                    ArrayList<Animal> animals = enclosure.getAnimals();
+
+                    for(int i = 1; i < animals.size() + 1; i++)
+                    {
+                        int count = i - 1;
+                        System.out.println(i + " Animal  : " + animals.get(count).getName() + "  " + animals.get(count).getSpecie());
+                    }
+
+                    selectionAnimal = inputAnimal.nextInt();
+
+                    Employee employee = zoo.getEmployee();
+
+                    employee.healAnimal(animals.get(selectionAnimal - 1));
 
                     EnclosureView enclosureView = new EnclosureView(enclosure, enclosures, zoo);
                     enclosureView.menu();

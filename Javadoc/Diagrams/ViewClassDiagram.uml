@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>View</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">View.Animal.AnimalView</node>
+    <node x="222.0" y="714.0">View.ZooStatusView</node>
+    <node x="0.0" y="714.0">View.DashboardView</node>
+    <node x="0.0" y="484.0">View.Enclos.EnclosuresView</node>
+    <node x="0.0" y="254.0">View.Animal.AnimalsView</node>
+    <node x="351.0" y="484.0">View.Enclos.EnclosureView</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="357.5" y="413.5" />
+  <SelectedNodes>
+    <node>View.Animal.AnimalView</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -103,6 +103,16 @@ public class Employee {
         }
     }
 
+    public void healAnimal(Animal animalToHeal)
+    {
+        if(animalToHeal.getHealth() != Animal.Health.HEALTHY)
+        {
+            animalToHeal.setHealth(Animal.Health.HEALTHY);
+
+            System.out.println("Animal : " + animalToHeal.getName() + " " + animalToHeal.getSpecie() + " Has been Healed with success \n");
+        }
+    }
+
     public void feedEnclosure(Enclosure enclosure)
     {
         System.out.println("\n");
