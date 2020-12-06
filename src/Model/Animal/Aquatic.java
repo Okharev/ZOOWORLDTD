@@ -34,4 +34,9 @@ public abstract class Aquatic extends Animal {
         super.setSleeping(false);
     }
 
+    @Override
+    public void setSleeping(boolean sleeping) {
+        super.setSleeping(false);
+    }
+
 }
