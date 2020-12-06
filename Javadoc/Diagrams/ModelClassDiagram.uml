@@ -20,8 +20,8 @@
     <node x="0.0" y="1166.0">Model.Animal.Wolf</node>
     <node x="1720.5347222222222" y="871.0">Model.Animal.Avian</node>
     <node x="1719.75" y="0.0">Model.Animal.Animal</node>
-    <node x="0.0" y="2327.0">Model.Enclos.AquariumEnclosure</node>
     <node x="2541.0" y="1540.0">Model.Animal.Animal.Health</node>
+    <node x="0.0" y="2327.0">Model.Enclos.AquariumEnclosure</node>
     <node x="3518.0" y="1166.0">Model.Animal.Shark</node>
     <node x="2524.0" y="1166.0">Model.Animal.RedFish</node>
     <node x="588.5" y="1540.0">Model.Enclos.Enclosure</node>
@@ -80,15 +80,15 @@
       <point x="647.8333333333334" y="2302.0" />
       <point x="-118.66666666666663" y="368.5" />
     </edge>
+    <edge source="Model.Enclos.DefaultEnclosure" target="Model.Enclos.Enclosure">
+      <point x="0.0" y="-68.0" />
+      <point x="0.0" y="368.5" />
+    </edge>
     <edge source="Model.Animal.Aquatic" target="Model.Animal.Animal">
       <point x="0.0" y="-92.5" />
       <point x="3262.0" y="834.0" />
       <point x="2105.5833333333335" y="834.0" />
       <point x="154.33333333333348" y="404.5" />
-    </edge>
-    <edge source="Model.Enclos.DefaultEnclosure" target="Model.Enclos.Enclosure">
-      <point x="0.0" y="-68.0" />
-      <point x="0.0" y="368.5" />
     </edge>
     <edge source="Model.Animal.Auk" target="Model.Animal.Avian">
       <point x="0.0" y="-200.5" />
@@ -107,7 +107,7 @@
       <point x="0.0" y="92.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.1046099290780143" x="2337.280366942358" y="1396.1318570826895" />
+  <settings layout="Hierarchic Group" zoom="0.3046099290780142" x="1993.5" y="1400.0" />
   <SelectedNodes>
     <node>Model.Enclos.DefaultEnclosure</node>
   </SelectedNodes>

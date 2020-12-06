@@ -124,7 +124,7 @@ public class Main {
         enclosures.add(avarianTemp1Enclosure);
 
 
-        Employee employee = new Employee("Zubi", 30, Employee.Sex.FEMALE);
+        Employee employee = new Employee("Rosette", 30, Employee.Sex.FEMALE);
 
         Zoo myZoo = new Zoo("Zooland", employee, 20, enclosures);
 
