@@ -4,19 +4,19 @@ import Model.Animal.*;
 import Model.Enclos.AquariumEnclosure;
 import Model.Enclos.AvarianEnclosure;
 import View.DashboardView;
-import Controller.AnimalController;
 import Model.Employe.Employee;
 import Model.Enclos.DefaultEnclosure;
 import Model.Enclos.Enclosure;
 import Model.Zoo.Zoo;
-import View.Animal.AnimalView;
 
-import javax.swing.text.View;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Main {
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         //Mammal

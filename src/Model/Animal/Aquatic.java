@@ -29,10 +29,6 @@ public abstract class Aquatic extends Animal {
         String canHaveOffspring = (this.canHaveOffspring) ? "Can give birth": "Can not give birth";
         System.out.println("Animal offspring : " + canHaveOffspring);
     }
-    @Override
-    public void setSleeping(boolean sleeping) {
-        super.setSleeping(false);
-    }
 
     @Override
     public void setSleeping(boolean sleeping) {

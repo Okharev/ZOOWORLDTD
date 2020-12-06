@@ -53,6 +53,9 @@ public abstract class Animal {
             System.out.println("Animal health : " + this.health);
     }
 
+    /**
+     *
+     */
     public enum Gender {
         FEMALE,
         MALE,
